@@ -1,7 +1,7 @@
 name: repository_dispatch working
 on:
   repository_dispatch:
-    types: [event-triggered-by-jira]
+    types: [build]
 
 jobs:
   run-github-actions:
