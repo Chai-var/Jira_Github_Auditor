@@ -12,3 +12,5 @@ jobs:
         uses: actions/hello-world-javascript-action@v1 #This action prints "Hello World" or "Hello" + the name of a person to greet to the log. Refer to https://github.com/actions/hello-world-javascript-action
         with:
           who-to-greet: Vishal #Input:Required The name of the person to greet. Default "World".
+      - name: Log greeting time
+        run: echo "${{steps.greet.outputs.time}}" #called the first step using its ID and printing The time we greeted you i.e the time the first step got executed.
