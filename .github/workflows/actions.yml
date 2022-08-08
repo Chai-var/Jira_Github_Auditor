@@ -1,0 +1,14 @@
+name: repository_dispatch working
+on:
+  repository_dispatch:
+    types: ["event-triggered-by-jira"]
+
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simple Java Script Action
+        id: greet #assigning an ID to this step
+        uses: actions/hello-world-javascript-action@v1 #This action prints "Hello World" or "Hello" + the name of a person to greet to the log. Refer to https://github.com/actions/hello-world-javascript-action
+        with:
+          who-to-greet: Vishal #Input:Required The name of the person to greet. Default "World".
