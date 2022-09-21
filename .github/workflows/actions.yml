@@ -14,3 +14,4 @@ jobs:
           who-to-greet: Vishal #Input:Required The name of the person to greet. Default "World"
       - name: Log greeting time
         run: echo "${{steps.greet.outputs.time}}" #called the first step using its ID and printing The time we greeted you i.e the time the first step got executed.
+#random
