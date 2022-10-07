@@ -2,6 +2,7 @@ name: repository_dispatch working
 on:
   repository_dispatch:
     event-type : [event-triggered-by-jira]
+ # pull_request:
 
 jobs:
   run-github-actions:
@@ -14,4 +15,3 @@ jobs:
           who-to-greet: Chai-Var #Input:Required The name of the person to greet. Default "World"
       - name: Log greeting time
         run: echo "${{steps.greet.outputs.time}}" #called the first step using its ID and printing The time we greeted you i.e the time the first step got executed.
-#random
