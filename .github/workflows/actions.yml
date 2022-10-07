@@ -2,7 +2,7 @@ name: repository_dispatch working
 on:
   repository_dispatch:
     event-type : [event-triggered-by-jira]
-  pull_request:
+ # pull_request:
 
 jobs:
   run-github-actions:
