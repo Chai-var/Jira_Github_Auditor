@@ -1,9 +1,5 @@
 name: repository_dispatch working
 on:
-  pull_request:
-    types: opened
-    branches:
-      - jira
   repository_dispatch:
     event-type : [event-triggered-by-jira]
  # pull_request:
