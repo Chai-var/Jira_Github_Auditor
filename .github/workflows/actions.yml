@@ -1,16 +1,12 @@
 name: repository_dispatch working
 on:
-  pull_request:
-    types: opened
-    branches:
-      - jira
   repository_dispatch:
     event-type : [event-triggered-by-jira]
  # pull_request:
 
 jobs:
   Jira_approval:
-    if: ${{ github.events == 'repository_dispatch' }}
+    #if: ${{ github.events == 'repository_dispatch' }}
     runs-on: ubuntu-latest
     steps:
       - name: Simple Java Script Action
