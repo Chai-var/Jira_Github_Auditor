@@ -1,7 +1,6 @@
 name: repository_dispatch working
 on:
-  repository_dispatch:
-    event-type : [event-triggered-by-jira]
+  push
  # pull_request:
 
 jobs:
