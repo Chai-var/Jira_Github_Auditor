@@ -1,6 +1,9 @@
 name: repository_dispatch working
 on:
-  push
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to bump to'
  # pull_request:
 
 jobs:
