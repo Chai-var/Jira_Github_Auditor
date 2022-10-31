@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: echo input field
-        run: echo ${{ github.event.input.version }}
+        run: echo ${{ github.event.inputs.version }}
       - name: Simple Java Script Action
         id: greet #assigning an ID to this step
         uses: actions/hello-world-javascript-action@v1 #This action prints "Hello World" or "Hello" + the name of a person to greet to the log. Refer to https://github.com/actions/hello-world-javascript-action
