@@ -11,6 +11,7 @@ jobs:
     #if: ${{ github.events == 'repository_dispatch' }}
     runs-on: ubuntu-latest
     steps:
+      - run: echo "${{ github.actor }}"
       - name: echo input field
         run: echo ${{ github.event.inputs.version }}
       - name: Simple Java Script Action
