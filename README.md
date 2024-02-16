@@ -23,3 +23,4 @@ Welcome to JIRA-GitHub Auditor, an innovative solution designed to streamline an
 5. Custom Approval Process:
 - Design and implement a customized approval process within JIRA, allowing for seamless collaboration and clear communication among team members.
 
+
