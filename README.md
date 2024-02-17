@@ -96,7 +96,7 @@ Developed a workflow that integrates GitHub pull requests with a custom Jira iss
         - Assignee: The Project Manager.
         - Additional fields:
             ```
-                        {
+            {
                 "fields": {
                     "labels": [
                         "PM_Approval",
@@ -135,5 +135,6 @@ Developed a workflow that integrates GitHub pull requests with a custom Jira iss
             | Accept                 | `application/vnd.github+json`     |
             | X-GitHub-Api-Version   | `28-11-2022`                      |
 
-
-
+> **Note:** Refer to below links to play around with more JIRA configurations:
+>**-->** (Send web request)[https://support.atlassian.com/cloud-automation/docs/jira-automation-actions/#Send-web-request]
+>**-->** (Smart values in Jira automation)[https://support.atlassian.com/cloud-automation/docs/smart-values-in-jira-automation/]
