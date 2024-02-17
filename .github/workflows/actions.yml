@@ -1,7 +1,7 @@
 name: repository_dispatch working
 on:
   repository_dispatch:
-    event-type : [event-triggered-by-jira]
+    event-type : [event-triggered-by-jira] #This event has to be setup in the JIRA account.
 
 jobs:
   run-github-actions:
@@ -11,8 +11,4 @@ jobs:
         id: greet #assigning an ID to this step
         uses: actions/hello-world-javascript-action@v1 #This action prints "Hello World" or "Hello" + the name of a person to greet to the log. Refer to https://github.com/actions/hello-world-javascript-action
         with:
-          who-to-greet: Vishal #Input:Required The name of the person to greet. Default "World"
-          #2
-          #3
-          #4
-          #5
+          who-to-greet: ChaiVar #Input:Required The name of the person to greet. Default "World"
