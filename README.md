@@ -79,12 +79,12 @@ Developed a workflow that integrates GitHub pull requests with a custom Jira iss
         - Summary* (required): Pull Request#{{webhookData.number}} for {{webhookData.repository.name}}
             - The above expression will create an issue in JIRA with a title that includes information about a specific GitHub pull request. The placeholders like {{webhookData.number}} and {{webhookData.repository.name}} will be dynamically replaced with actual data from the webhook payload when the automation rule is executed. 
         - Description: 
-            '''
+            ```
             {{webhookData.pull_request.user.login}} has created Pull Request
             #{{webhookData.number}} for {{webhookData.repository.name}}
             Link to Pull request {{webhookData.pull_request.html_url}}
             {{webhookData.pull_request.body}}
-            '''
+            ```
             - The above snippet retrieves information regarding the GitHub PR :
                 - Username: {{webhookData.pull_request.user.login}} indicates the GitHub username of the user who created the pull request.
                 - Pull Request Details:
@@ -95,7 +95,7 @@ Developed a workflow that integrates GitHub pull requests with a custom Jira iss
 
         - Assignee: The Project Manager.
         - Additional fields:
-            '''
+            ```
                         {
                 "fields": {
                     "labels": [
@@ -105,7 +105,7 @@ Developed a workflow that integrates GitHub pull requests with a custom Jira iss
                 "customfield_10036": "{{webhookData.number}}"
                 }
             }
-            '''
+            ```
             - The above JSON data, provides the other issue fields: Labels and Pull_Request_number.
             - fields: This is an object containing various fields related to a JIRA issue.
             - labels: An array of labels associated with the JIRA issue. In this case, it includes two labels: "PM_Approval" and "GitHub_PR." Labels are often used to categorize or tag issues.
@@ -122,11 +122,12 @@ Developed a workflow that integrates GitHub pull requests with a custom Jira iss
         - HTTP method* (required): POST
         - Web request body* (required): Custom data
         - Custom data* (required):
-        '''
+        ```
         {
         "body": "{{issue.assignee.displayName}} Approved this PR"
         }
-        '''
+        ```
+        
         - Headers (optional):
             | Key                    | Value                             |
             | ---------------------- | --------------------------------- |
