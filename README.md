@@ -136,5 +136,5 @@ Developed a workflow that integrates GitHub pull requests with a custom Jira iss
             | X-GitHub-Api-Version   | `28-11-2022`                      |
 
 > **Note:** Refer to below links to play around with more JIRA configurations:
->**-->** (Send web request)[https://support.atlassian.com/cloud-automation/docs/jira-automation-actions/#Send-web-request]
->**-->** (Smart values in Jira automation)[https://support.atlassian.com/cloud-automation/docs/smart-values-in-jira-automation/]
+> - (Send web request)[https://support.atlassian.com/cloud-automation/docs/jira-automation-actions/#Send-web-request]
+> - (Smart values in Jira automation)[https://support.atlassian.com/cloud-automation/docs/smart-values-in-jira-automation/]
