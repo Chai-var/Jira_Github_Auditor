@@ -138,3 +138,10 @@ Developed a workflow that integrates GitHub pull requests with a custom Jira iss
 > **Note:** Refer to below links to play around with more JIRA configurations:
 > - [Send web request](https://support.atlassian.com/cloud-automation/docs/jira-automation-actions/#Send-web-request)
 > - [Smart values in Jira automation](https://support.atlassian.com/cloud-automation/docs/smart-values-in-jira-automation/)
+
+# How It Works?
+1. Developer creates a Pull request in GitHub.
+2. GitHub sends a webhook notification to Jira when relevant PR events occur. 
+3. When PR opened event occurs, Rule 1 is triggered and an issue is created and assigned to the Project manager automaticallly.
+4. The PM approves the PR by transitioning the approvals issue from 'Approval In-progress' to 'Approval Done'
+5. The issue transition triggers the Rule 2 is triggered and the assignee approval message is sent to GitHub PR as a review comment.
