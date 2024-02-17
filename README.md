@@ -35,6 +35,15 @@ Developed a workflow that integrates GitHub pull requests with a custom Jira iss
 - Allow project managers to approve pull requests within Jira without granting them GitHub access.
 - Post approval comments directly on the pull request in GitHub.
 
+## Benefits & Impact
+
+1. Enhanced Security:
+    - Mitigate the risk associated with unnecessary GitHub access for non-developer roles.
+2. Improved Collaboration:
+    - Foster collaboration between development and project management teams with a unified review process.
+3. Time and Effort Savings:
+    - Streamline the review process, saving time and effort for both developers and Project Managers.
+    
 # Configurations
 ## GitHub:
 
@@ -145,3 +154,5 @@ Developed a workflow that integrates GitHub pull requests with a custom Jira iss
 3. When PR opened event occurs, Rule 1 is triggered and an issue is created and assigned to the Project manager automaticallly.
 4. The PM approves the PR by transitioning the approvals issue from 'Approval In-progress' to 'Approval Done'
 5. The issue transition triggers the Rule 2 is triggered and the assignee approval message is sent to GitHub PR as a review comment.
+
+
