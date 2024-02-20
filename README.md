@@ -62,7 +62,7 @@ Developed a workflow that integrates GitHub pull requests with a custom Jira iss
         1. Description fields: These fields describe the work that needs to be done. They display prominently in most views.
             - Summary [Required]: This is a mandatory field that provides a concise and clear overview of the issue. Ideally, it should be 255 characters or less for optimal readability. Think of it as a headline that captures the essence of the problem or task.
             - Description: This optional field allows for a more detailed explanation of the issue. Describe the symptoms, steps to reproduce, expected behavior, and any other relevant information that helps understand the problem and how to resolve it.
-        2. Context Fields:These fields provide context to the work, and help group, filter, and report on similar issues.
+        2. Context Fields:These fields provide context to the work, and help group, filter, and report on similar issues. 
             - Assignee: This field indicates the person responsible for working on the issue. Selecting an assignee improves accountability and helps track progress.
             - Labels: These user-defined keywords categorize issues for better organization and filtering. Use them to group related issues or indicate priority levels.
             - Parent: This field links the current issue to another related issue, often called a "subtask" or a "dependent issue." It helps clarify hierarchical relationships and dependencies.
