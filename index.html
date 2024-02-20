@@ -70,5 +70,29 @@
     </li>
   </ol>
 
+      <h3>Problem Statement</h3>
+        <p>Streamline pull request approval for project managers while ensuring auditability and eliminating the need for unnecessary GitHub licenses.</p>
+
+        <h3>Solution</h3>
+        <p>Developed a workflow that integrates GitHub pull requests with a custom Jira issue type for approval tracking. This solution leverages automation and webhooks to:</p>
+        <ul>
+            <li>Create Jira issues automatically upon pull request creation in GitHub.</li>
+            <li>Allow project managers to approve pull requests within Jira without granting them GitHub access.</li>
+            <li>Post approval comments directly on the pull request in GitHub.</li>
+        </ul>
+
+        <h3>Benefits & Impact</h3>
+        <ol>
+            <li><strong>Enhanced Security:</strong> Mitigate the risk associated with unnecessary GitHub access for non-developer roles.</li>
+            <li><strong>Improved Collaboration:</strong> Foster collaboration between development and project management teams with a unified review process.</li>
+            <!-- Add other benefits and impact as needed -->
+        </ol>
+  <h2>Configurations</h2>
+
+    <h3>GitHub</h3>
+    <li>Create a GitHub Repository webhook, Specify the webhook URL to point to the Jira automation endpoint that captures PR details and subscribe to the Pull request event that occurs on GitHub.</li>
+    <p><a href="https://docs.github.com/en/webhooks/using-webhooks/creating-webhooks#creating-a-repository-webhook" target="_blank">Refer to this link to learn how to create a GitHub Webhook.</a></p>
+
+
 </body>
 </html>
