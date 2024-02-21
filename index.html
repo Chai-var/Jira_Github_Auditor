@@ -32,6 +32,26 @@
     a {
       color: #61eefb;
     }
+    .code-box {
+            position: relative;
+            display: inline-block;
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .copy-button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+        }
   </style>
 </head>
 <body>
@@ -126,7 +146,7 @@
           <li>Project: Specify the project name.</li>
           <li>Issue type: Approvals</li>
           <li>Choose a field to set: Assignee, Description</li>
-          <li>Summary* [required]: <pre><code>Pull Request#{{webhookData.number}} for {{webhookData.repository.name}}</code></pre></li>
+          <li>Summary* [required]: <code id="codeSnippet">Pull Request#{{webhookData.number}} for {{webhookData.repository.name}}</code></li>
 </body>
 </html>
 
