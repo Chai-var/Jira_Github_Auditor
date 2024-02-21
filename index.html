@@ -91,7 +91,7 @@
 
     <h3>GitHub</h3>
     <li>Create a GitHub Repository webhook, Specify the webhook URL to point to the Jira automation endpoint that captures PR details and subscribe to the Pull request event that occurs on GitHub.</li>
-    <li><p><a href="https://docs.github.com/en/webhooks/using-webhooks/creating-webhooks#creating-a-repository-webhook" target="_blank">Refer to this link to learn how to create a GitHub Webhook.</a></p></li>
+    <li><a href="https://docs.github.com/en/webhooks/using-webhooks/creating-webhooks#creating-a-repository-webhook" target="_blank">Refer to this link to learn how to create a GitHub Webhook.</a></li>
       
     <h3>Jira</h3>
     <h4>1. Custom Issue Type:</h4>
@@ -105,6 +105,25 @@
         <li><strong>Description:</strong> This optional field allows for a more detailed explanation of the issue. Describe the symptoms, steps to reproduce, expected behavior, and any other relevant information that helps understand the problem and how to resolve it.</li>
     <h5>b. Context Fields:</h5><p>These fields provide context to the work, and help group, filter, and report on similar issues.</p>
         <li><strong>Assignee:</strong> This field indicates the person responsible for working on the issue. Selecting an assignee improves accountability and helps track progress.</li>
+        <li><strong>Labels:</strong> These user-defined keywords categorize issues for better organization and filtering. Use them to group related issues or indicate priority levels.</li>
+        <li><strong>Parent:</strong> This field links the current issue to another related issue, often called a "subtask" or a "dependent issue." It helps clarify hierarchical relationships and dependencies.</li>
+        <li><strong>Pull_Request_Number [Required]:</strong> This custom field stores the unique identifier of the associated pull request in GitHub.</li>
+      <h5>c. Reporter:</h5><p>This field shows the user who initially created the issue. It provides an audit trail and helps identify who raised the concern. This field is hidden when its empty.</p>
+
+    <h4>2. Custom issue field:</h4>
+        <li>In the above issue type, we have a context issue, 'Pull_Request_Number'. This is a custom issue type created to extract the pull request number from GitHub.</li>
+        <li>Here, I am using it to extract the PR number data from GitHub using Webhook data.</li>
+        <li>Refer to <a href="https://support.atlassian.com/jira-cloud-administration/docs/create-a-custom-field/">Create a custom issue field</a> to set up one in your JIRA project.</li>
+    <h4>3. Automation rules:</h4>
+        <p><strong>Rule 1: PM-Approval-in-JIRA</strong></p>
+        <li>Trigger: GitHub Incoming webhook <a href="https://docs.github.com/en/webhooks/webhook-events-and-payloads#pull_request">Pull_request</a> event. This rule is triggerd whenever a Pull request activity occurs in GitHub.</li>
+        <li>Action 1: As soon as the rule is triggered, a log action is captured to display the Pull_request activities. For instance, Pull request assigned, auto merge disabled, auto merge enabled, closed, converted to draft, demilestoned, dequeued, edited, enqueued, labeled, locked, milestoned, opened, ready for review, reopened, review request removed, review requested, synchronized, unassigned, unlabeled, or unlocked.</li>
+        <li>IF condition: We set a condition to proceed further, only if the Pull_request activity is "opened".</li>
+        <li>Action 2: This action will 'Create an issue', whenever PR is opened:</li>
+          <li>Project: Specify the project name.</li>
+          <li>Issue type: Approvals</li>
+          <li>Choose a field to set: Assignee, Description</li>
+          <li>Summary* [required]: <script> "Pull Request#{{webhookData.number}} for {{webhookData.repository.name}}" </script></li>
 </body>
 </html>
 
