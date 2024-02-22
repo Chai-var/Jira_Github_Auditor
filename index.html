@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JIRA-GitHub Auditor</title>
   <link rel="stylesheet" href="main.css">
+  <!-- Link your JavaScript module here -->
+  <script src="copy-code.js" defer></script>
 </head>
 <body>
   <h1>Project Name</h1>
@@ -100,10 +102,10 @@
           <li>Summary* [required]:
             <div class="code-box" id="codeBox">
               <code id="codeSnippet">Pull Request#{{webhookData.number}} for {{webhookData.repository.name}}</code>
-              <button class="copy-button" onclick="copyCode()">Copy Code</button>
+              <button class="copy-button" onclick="CodeCopy.copyCode('codeSnippet')">Copy Code</button>
           </div>
 
-          <script>
+          <!-- <script>
               function copyCode() {
                   /* Get the text content of the code snippet */
                   var codeText = document.getElementById("codeSnippet").innerText;
@@ -128,21 +130,20 @@
                   /* Provide some visual feedback */
                   alert("Code copied to clipboard!");
               }
-          </script>
+          </script> -->
         </li>
         <li>The above expression will create an issue in JIRA with a title that includes information about a specific GitHub pull request. The placeholders like {{webhookData.number}} and {{webhookData.repository.name}} will be dynamically replaced with actual data from the webhook payload when the automation rule is executed.</li>
         <li>Description: </li>
         <div class="code-box" id="codeBox">
-          <code id="codeSnippet1">
+          <code id="codeSnippet">
             {{webhookData.pull_request.user.login}} has created Pull Request
             #{{webhookData.number}} for {{webhookData.repository.name}}
             Link to Pull request {{webhookData.pull_request.html_url}}
             {{webhookData.pull_request.body}}
           </code>
-          <button class="copy-button" onclick="copyCode()">Copy Code</button>
-      </div>
+          <button class="copy-button" onclick="CodeCopy.copyCode('codeSnippet')">Copy Code</button>
 
-      <script>
+      <!-- <script>
           function copyCode() {
               /* Get the text content of the code snippet */
               var codeText = document.getElementById("codeSnippet1").innerText;
@@ -167,7 +168,7 @@
               /* Provide some visual feedback */
               alert("Code copied to clipboard!");
           }
-      </script>
+      </script> -->
 
 </body>
 </html>
