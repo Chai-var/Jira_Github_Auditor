@@ -66,11 +66,11 @@
     <h3>GitHub</h3>
     <li>Create a GitHub Repository webhook, Specify the webhook URL to point to the Jira automation endpoint that captures PR details and subscribe to the Pull request event that occurs on GitHub.</li>
     <li><a href="https://docs.github.com/en/webhooks/using-webhooks/creating-webhooks#creating-a-repository-webhook" target="_blank">Refer to this link to learn how to create a GitHub Webhook.</a></li>
-      
+
     <h3>Jira</h3>
     <h4>1. Custom Issue Type:</h4>
-    <li>Issue types distinguish different types of work in unique ways, and help you identify, categorize, and report on your team’s work across your Jira site. They can help your team build more structure into your working process.</li> 
-    <li>To understand more on <a href="https://support.atlassian.com/jira-cloud-administration/docs/what-are-issue-types/">issue-types.</a></li> 
+    <li>Issue types distinguish different types of work in unique ways, and help you identify, categorize, and report on your team’s work across your Jira site. They can help your team build more structure into your working process.</li>
+    <li>To understand more on <a href="https://support.atlassian.com/jira-cloud-administration/docs/what-are-issue-types/">issue-types.</a></li>
     <li>Issue type name: Approvals</li>
     <li>Description: Approvals represents the GitHub Pull Request approval. This issue type will be for Project Managers/Approvers who are managing the GitHub Project outside of GitHub. An external approval taken from JIRA.</li>
     <h5>a. Fields:</h5>
@@ -97,39 +97,77 @@
           <li>Project: Specify the project name.</li>
           <li>Issue type: Approvals</li>
           <li>Choose a field to set: Assignee, Description</li>
-          <li>Summary* [required]: 
+          <li>Summary* [required]:
             <div class="code-box" id="codeBox">
               <code id="codeSnippet">Pull Request#{{webhookData.number}} for {{webhookData.repository.name}}</code>
               <button class="copy-button" onclick="copyCode()">Copy Code</button>
           </div>
-      
+
           <script>
               function copyCode() {
                   /* Get the text content of the code snippet */
                   var codeText = document.getElementById("codeSnippet").innerText;
-      
+
                   /* Create a temporary textarea to hold the code text */
                   var tempTextArea = document.createElement("textarea");
                   tempTextArea.value = codeText;
-      
+
                   /* Append the textarea to the body */
                   document.body.appendChild(tempTextArea);
-      
+
                   /* Select the text in the textarea */
                   tempTextArea.select();
                   tempTextArea.setSelectionRange(0, 99999);
-      
+
                   /* Copy the text to the clipboard */
                   document.execCommand("copy");
-      
+
                   /* Remove the temporary textarea */
                   document.body.removeChild(tempTextArea);
-      
+
                   /* Provide some visual feedback */
                   alert("Code copied to clipboard!");
               }
           </script>
         </li>
+        <li>The above expression will create an issue in JIRA with a title that includes information about a specific GitHub pull request. The placeholders like {{webhookData.number}} and {{webhookData.repository.name}} will be dynamically replaced with actual data from the webhook payload when the automation rule is executed.</li>
+        <li>Description: </li>
+        <div class="code-box" id="codeBox">
+          <code id="codeSnippet">
+            {{webhookData.pull_request.user.login}} has created Pull Request
+            #{{webhookData.number}} for {{webhookData.repository.name}}
+            Link to Pull request {{webhookData.pull_request.html_url}}
+            {{webhookData.pull_request.body}}
+          </code>
+          <button class="copy-button" onclick="copyCode()">Copy Code</button>
+      </div>
+
+      <script>
+          function copyCode() {
+              /* Get the text content of the code snippet */
+              var codeText = document.getElementById("codeSnippet").innerText;
+
+              /* Create a temporary textarea to hold the code text */
+              var tempTextArea = document.createElement("textarea");
+              tempTextArea.value = codeText;
+
+              /* Append the textarea to the body */
+              document.body.appendChild(tempTextArea);
+
+              /* Select the text in the textarea */
+              tempTextArea.select();
+              tempTextArea.setSelectionRange(0, 99999);
+
+              /* Copy the text to the clipboard */
+              document.execCommand("copy");
+
+              /* Remove the temporary textarea */
+              document.body.removeChild(tempTextArea);
+
+              /* Provide some visual feedback */
+              alert("Code copied to clipboard!");
+          }
+      </script>
+
 </body>
 </html>
-
