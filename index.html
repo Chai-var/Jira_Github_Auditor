@@ -107,7 +107,7 @@
         </li>
         <li>The above expression will create an issue in JIRA with a title that includes information about a specific GitHub pull request. The placeholders like {{webhookData.number}} and {{webhookData.repository.name}} will be dynamically replaced with actual data from the webhook payload when the automation rule is executed.</li>
         <li>Description: </li>
-        <div class="code-box2" id="codeBox2">
+        <p><div class="code-box2" id="codeBox2">
           <code id="codeSnippet2">
             {{webhookData.pull_request.user.login}} has created Pull Request
             #{{webhookData.number}} for {{webhookData.repository.name}}.
@@ -117,5 +117,16 @@
           </code>
           <button class="copy-button2" onclick="CodeCopy.copyCode('codeSnippet2')">Copy Code</button>
         </div>
+      </p>
+      <li>The above snippet retrieves information regarding the GitHub PR :</li>
+          <li>Username: {{webhookData.pull_request.user.login}} indicates the GitHub username of the user who created the pull request.</li>
+          <li>Pull request number: {{webhookData.number}}, represents the pull request number.</li>
+          <li>Repository name: {{webhookData.repository.name}}, specifies the name of the repository where the pull request was created.</li>
+          <li>Link to Pull request: {{webhookData.pull_request.html_url}}, provides a direct link to the pull request on GitHub.</li>
+          <li>Pull request description: {{webhookData.pull_request.body}}, displays the description of the pull request.</li>
+      <li>Assignee: The Project Manager.</li>
+      <li>Additional fields:</li>
+
+
 </body>
 </html>
