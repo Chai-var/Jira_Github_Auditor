@@ -25,20 +25,20 @@ body {
   a {
     color: #61eefb;
   }
-  .code-box {
-    position: relative;
-    display: inline-block;
-    border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 10px;
-}
+code {
+            position: relative;
+            display: inline-block;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 10px;
+        }
 
-.copy-button {
-    position: outline ;
-    top: 5px;
-    right: 5px;
-    cursor: pointer;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-}
+button {
+            position: outline ;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+        }
