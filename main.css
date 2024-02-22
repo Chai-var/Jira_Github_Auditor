@@ -1,0 +1,44 @@
+body {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    font-family: 'Courier New', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+    padding: 20px;
+  }
+
+  h1, h2, h3 {
+    color: #61dafb;
+  }
+
+  p {
+    line-height: 1.5;
+  }
+
+  ol {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 20px;
+  }
+  a {
+    color: #61eefb;
+  }
+  .code-box {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.copy-button {
+    position: outline ;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+}
