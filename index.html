@@ -100,48 +100,21 @@
           <li>Issue type: Approvals</li>
           <li>Choose a field to set: Assignee, Description</li>
           <li>Summary* [required]:
-            <div class="code-box" id="codeBox">
-              <code id="codeSnippet">Pull Request#{{webhookData.number}} for {{webhookData.repository.name}}</code>
-              <button class="copy-button" onclick="CodeCopy.copyCode('codeSnippet')">Copy Code</button>
+            <div class="code-box1" id="codeBox1">
+              <code id="codeSnippet1">Pull Request#{{webhookData.number}} for {{webhookData.repository.name}}</code>
+              <button class="copy-button" onclick="CodeCopy.copyCode('codeSnippet1')">Copy Code</button>
           </div>
-
-          <!-- <script>
-              function copyCode() {
-                  /* Get the text content of the code snippet */
-                  var codeText = document.getElementById("codeSnippet").innerText;
-
-                  /* Create a temporary textarea to hold the code text */
-                  var tempTextArea = document.createElement("textarea");
-                  tempTextArea.value = codeText;
-
-                  /* Append the textarea to the body */
-                  document.body.appendChild(tempTextArea);
-
-                  /* Select the text in the textarea */
-                  tempTextArea.select();
-                  tempTextArea.setSelectionRange(0, 99999);
-
-                  /* Copy the text to the clipboard */
-                  document.execCommand("copy");
-
-                  /* Remove the temporary textarea */
-                  document.body.removeChild(tempTextArea);
-
-                  /* Provide some visual feedback */
-                  alert("Code copied to clipboard!");
-              }
-          </script> -->
         </li>
         <li>The above expression will create an issue in JIRA with a title that includes information about a specific GitHub pull request. The placeholders like {{webhookData.number}} and {{webhookData.repository.name}} will be dynamically replaced with actual data from the webhook payload when the automation rule is executed.</li>
         <li>Description: </li>
-        <div class="code-box" id="codeBox">
-          <code id="codeSnippet">
+        <div class="code-box2" id="codeBox2">
+          <code id="codeSnippet2">
             {{webhookData.pull_request.user.login}} has created Pull Request
             #{{webhookData.number}} for {{webhookData.repository.name}}
             Link to Pull request {{webhookData.pull_request.html_url}}
             {{webhookData.pull_request.body}}
           </code>
-          <button class="copy-button" onclick="CodeCopy.copyCode('codeSnippet')">Copy Code</button>
+          <button class="copy-button" onclick="CodeCopy.copyCode('codeSnippet2')">Copy Code</button>
 
       <!-- <script>
           function copyCode() {
