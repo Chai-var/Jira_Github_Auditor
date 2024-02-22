@@ -1,5 +1,3 @@
-// copyCode.js
-
 var CodeCopy = (function () {
     function copyCode(elementId) {
         /* Get the text content of the specified element */
@@ -22,8 +20,19 @@ var CodeCopy = (function () {
         /* Remove the temporary textarea */
         document.body.removeChild(tempTextArea);
 
-        /* Provide some visual feedback */
-        alert("Code copied to clipboard!");
+        /* Create a message element if it doesn't exist */
+        var messageElement = document.getElementById(elementId + "-message");
+        if (!messageElement) {
+            messageElement = document.createElement("div");
+            messageElement.id = elementId + "-message";
+            document.body.appendChild(messageElement);
+        }
+
+        /* Display a message with a tick symbol indicating the code is copied */
+        messageElement.innerHTML = "&#10004; Code Copied!";
+        setTimeout(function () {
+            messageElement.innerHTML = ""; // Clear the message after a brief timeout
+        }, 2000); // Adjust the timeout duration as needed (e.g., 2000 milliseconds = 2 seconds)
     }
 
     return {

@@ -100,7 +100,7 @@
           <li>Issue type: Approvals</li>
           <li>Choose a field to set: Assignee, Description</li>
           <li>Summary* [required]:
-            <div class="code-box1" id="codeBox1">
+            <div class="code-box1" id="codeBox1"> <!-- CODEBOX TEMPLATE SCRIPT -->
               <code id="codeSnippet1">Pull Request#{{webhookData.number}} for {{webhookData.repository.name}}</code>
               <button class="copy-button1" onclick="CodeCopy.copyCode('codeSnippet1')">Copy Code</button>
           </div>
@@ -110,7 +110,8 @@
         <div class="code-box2" id="codeBox2">
           <code id="codeSnippet2">
             {{webhookData.pull_request.user.login}} has created Pull Request
-            #{{webhookData.number}} for {{webhookData.repository.name}}
+            #{{webhookData.number}} for {{webhookData.repository.name}}.
+
             Link to Pull request {{webhookData.pull_request.html_url}}
             {{webhookData.pull_request.body}}
           </code>
